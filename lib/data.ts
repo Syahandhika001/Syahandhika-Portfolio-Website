@@ -289,3 +289,11 @@ export const certifications = [
   },
   // Tambahkan sertifikasi lain jika ada
 ] as const;
+
+
+export const contactInfo = {
+  email: 'dhika.farizi@gmail.com',
+  phone: '+62 XXX XXXX XXXX', // Ganti dengan nomor Anda (optional)
+  location: 'Jakarta, Indonesia',
+  availability: 'Available for freelance projects',
+} as const;
