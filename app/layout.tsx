@@ -17,6 +17,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://syahandhika-portfolio-website.vercel.app/'),
   title: 'Syahandhika - Full-Stack Developer',
   description:
     'Portfolio website showcasing my projects and experience in web development',
