@@ -60,10 +60,10 @@ export const metadata: Metadata = {
     siteName: 'Syahandhika Portfolio',
     images: [
       {
-        url: '/og-image.png',
+        url: '/og_image.png',
         width: 1200,
         height: 630,
-        alt: 'Syahandhika Portfolio',
+        alt: 'Syahandhika Naufal Farizi - Frontend Developer',
       },
     ],
   },
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     description:
       'Passionate Frontend Developer specializing in React, Next.js, and OutSystems',
     creator: '@syahandhika',
-    images: ['/og-image.png'],
+    images: ['/og_image.png'],
   },
   
   // ✅ SEO ROBOTS
