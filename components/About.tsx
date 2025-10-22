@@ -56,13 +56,13 @@ export function About() {
           variants={containerVariants}
           className="grid grid-cols-2 gap-4 md:grid-cols-4"
         >
-          {aboutMe.stats.map((stat, index) => (
+          {aboutMe.stats.map((stat) => (
             <motion.div
               key={stat.label}
               variants={itemVariants}
               whileHover={{ scale: 1.05, y: -5 }}
               className="card text-center"
-            >
+            > 
               <div className="mb-2 text-4xl font-bold text-primary-500">
                 {stat.value}
               </div>

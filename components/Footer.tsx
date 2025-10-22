@@ -1,14 +1,13 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { navLinks, personalInfo } from '@/lib/data';
-import { FiArrowUp, FiHeart } from 'react-icons/fi';
+import { navLinks, personalInfo, socialLinks } from '@/lib/data';
+import { FiArrowUp, FiHeart, FiGithub, FiLinkedin, FiTwitter, FiMail } from 'react-icons/fi';
 
 const iconMap = {
-  FiGithub: require('react-icons/fi').FiGithub,
-  FiLinkedin: require('react-icons/fi').FiLinkedin,
-  FiTwitter: require('react-icons/fi').FiTwitter,
-  FiMail: require('react-icons/fi').FiMail,
+  FiGithub,
+  FiLinkedin,
+  FiTwitter,
+  FiMail,
 };
 
 export function Footer() {
@@ -37,16 +36,16 @@ export function Footer() {
               functional web experiences.
             </p>
             <div className="flex gap-3">
-              {personalInfo.socialLinks.map((social) => {
+              {socialLinks.map((social) => {
                 const Icon = iconMap[social.icon as keyof typeof iconMap];
                 return (
                   <a
-                    key={social.platform}
+                    key={social.name}
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="rounded-lg border border-gray-300 bg-white p-2 text-gray-600 transition-all duration-300 hover:border-primary-500 hover:text-primary-500 dark:border-secondary-700/50 dark:bg-dark-secondary dark:text-gray-400"
-                    aria-label={social.platform}
+                    aria-label={social.name}
                   >
                     <Icon className="h-5 w-5" />
                   </a>
@@ -57,7 +56,9 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="mb-4 font-semibold text-gray-900 dark:text-white">Quick Links</h4>
+            <h4 className="mb-4 font-semibold text-gray-900 dark:text-white">
+              Quick Links
+            </h4>
             <ul className="space-y-2">
               {navLinks.map((link) => (
                 <li key={link.name}>
@@ -74,7 +75,9 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="mb-4 font-semibold text-gray-900 dark:text-white">Services</h4>
+            <h4 className="mb-4 font-semibold text-gray-900 dark:text-white">
+              Services
+            </h4>
             <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
               <li>Web Development</li>
               <li>Frontend Engineering</li>
@@ -86,7 +89,9 @@ export function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="mb-4 font-semibold text-gray-900 dark:text-white">Get In Touch</h4>
+            <h4 className="mb-4 font-semibold text-gray-900 dark:text-white">
+              Get In Touch
+            </h4>
             <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
               <li>
                 <a

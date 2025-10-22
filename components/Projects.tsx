@@ -6,13 +6,15 @@ import { projects, projectCategories } from '@/lib/data';
 import { FiGithub, FiExternalLink } from 'react-icons/fi';
 import Image from 'next/image';
 
-export function Projects() {
-  const [activeCategory, setActiveCategory] = useState<string>('All');
+type Category = (typeof projectCategories)[number];
 
-  const filteredProjects =
-    activeCategory === 'All'
-      ? projects
-      : projects.filter((project) => project.category === activeCategory);
+export function Projects() {
+  const [activeCategory, setActiveCategory] = useState<Category>('All');
+
+  // ✅ Fix: Explicitly type the filtered projects
+  const filteredProjects = projects.filter((project) =>
+    activeCategory === 'All' ? true : project.category === activeCategory
+  );
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -46,29 +48,26 @@ export function Projects() {
       >
         {/* Section Header */}
         <div className="text-center">
-          <h2 className="gradient-text mb-4">Featured Projects</h2>
+          <h2 className="gradient-text mb-4">My Projects</h2>
           <p className="mx-auto max-w-2xl text-lg text-gray-400 dark:text-gray-400">
-            A collection of projects I've worked on, showcasing my skills and
-            passion for development
+            Showcase of my recent work and side projects
           </p>
         </div>
 
-        {/* Filter Categories */}
-        <div className="flex flex-wrap justify-center gap-3">
+        {/* Category Filter */}
+        <div className="flex flex-wrap justify-center gap-4">
           {projectCategories.map((category) => (
-            <motion.button
+            <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={`rounded-lg px-6 py-2 font-medium transition-all duration-300 ${
+              className={`rounded-full px-6 py-2 font-medium transition-all duration-300 ${
                 activeCategory === category
-                  ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/50'
+                  ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/30'
                   : 'border border-secondary-700/50 bg-dark-secondary text-gray-400 hover:border-primary-500 hover:text-primary-500 dark:border-secondary-700/50 dark:bg-dark-secondary'
               }`}
             >
               {category}
-            </motion.button>
+            </button>
           ))}
         </div>
 
@@ -80,16 +79,14 @@ export function Projects() {
           animate="visible"
           className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
         >
-            {/* className="grid gap-8 md:grid-cols-2 lg:grid-cols-4" kalo mau 4 grid colom */}
           {filteredProjects.map((project) => (
             <motion.div
               key={project.id}
               variants={itemVariants}
-              whileHover={{ y: -10 }}
-              className="group card overflow-hidden p-0"
+              className="card group overflow-hidden hover:border-primary-500"
             >
               {/* Project Image */}
-              <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-primary-500/20 to-secondary-500/20">
+              <div className="relative mb-6 aspect-video overflow-hidden rounded-lg bg-secondary-800">
                 {project.image ? (
                   <Image
                     src={project.image}
@@ -104,47 +101,55 @@ export function Projects() {
                     </span>
                   </div>
                 )}
-
-                {/* Featured Badge */}
                 {project.featured && (
-                  <div className="absolute right-4 top-4 rounded-full bg-primary-500 px-3 py-1 text-xs font-semibold text-white">
-                    Featured
+                  <div className="absolute right-2 top-2">
+                    <span className="rounded-full bg-primary-500 px-3 py-1 text-xs font-semibold text-white">
+                      Featured
+                    </span>
                   </div>
                 )}
               </div>
 
-              {/* Project Content */}
-              <div className="space-y-4 p-6">
+              {/* Project Info */}
+              <div className="space-y-4">
+                {/* Category Badge */}
+                <span className="inline-block rounded-full bg-primary-500/10 px-3 py-1 text-xs font-semibold text-primary-500">
+                  {project.category}
+                </span>
+
                 {/* Title */}
-                <h3 className="text-xl font-bold group-hover:text-primary-500 transition-colors">
-                  {project.title}
-                </h3>
+                <h3 className="text-xl font-bold">{project.title}</h3>
 
                 {/* Description */}
-                <p className="text-sm leading-relaxed text-gray-400 dark:text-gray-400">
+                <p className="line-clamp-3 text-sm text-gray-400">
                   {project.description}
                 </p>
 
                 {/* Tech Stack */}
                 <div className="flex flex-wrap gap-2">
-                  {project.techStack.map((tech) => (
+                  {project.techStack.slice(0, 3).map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-md bg-primary-500/10 px-2 py-1 text-xs text-primary-500"
+                      className="rounded-md bg-secondary-700/50 px-2 py-1 text-xs text-gray-300"
                     >
                       {tech}
                     </span>
                   ))}
+                  {project.techStack.length > 3 && (
+                    <span className="rounded-md bg-secondary-700/50 px-2 py-1 text-xs text-gray-300">
+                      +{project.techStack.length - 3}
+                    </span>
+                  )}
                 </div>
 
                 {/* Links */}
-                <div className="flex gap-3 pt-2">
+                <div className="flex gap-4 pt-2">
                   {project.githubUrl && (
                     <a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-primary-500"
+                      className="inline-flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-primary-500"
                     >
                       <FiGithub className="h-5 w-5" />
                       Code
@@ -155,7 +160,7 @@ export function Projects() {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-primary-500"
+                      className="inline-flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-primary-500"
                     >
                       <FiExternalLink className="h-5 w-5" />
                       Live Demo
@@ -174,7 +179,7 @@ export function Projects() {
             animate={{ opacity: 1 }}
             className="py-20 text-center"
           >
-            <p className="text-gray-400 dark:text-gray-400">
+            <p className="text-lg text-gray-400">
               No projects found in this category.
             </p>
           </motion.div>

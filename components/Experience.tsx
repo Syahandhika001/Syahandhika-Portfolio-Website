@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { experiences, education, certifications } from '@/lib/data';
-import { FiBriefcase, FiCalendar, FiMapPin, FiAward, FiCheckCircle } from 'react-icons/fi';
+import { FiBriefcase, FiCalendar, FiMapPin, FiAward, FiCheckCircle,FiExternalLink } from 'react-icons/fi';
 import { useState } from 'react';
 
 type Tab = 'experience' | 'education' | 'certifications';
@@ -259,7 +259,7 @@ export function Experience() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+            className="grid gap-6 md:grid-cols-2"
           >
             {certifications.map((cert) => (
               <motion.div
@@ -268,20 +268,22 @@ export function Experience() {
                 className="card group hover:border-primary-500"
               >
                 <div className="mb-4 flex items-start justify-between">
-                  <FiAward className="h-8 w-8 text-primary-500" />
-                  <span className="text-sm text-gray-400">{cert.date}</span>
+                  <div className="rounded-lg bg-primary-500/10 p-3">
+                    <FiAward className="h-6 w-6 text-primary-500" />
+                  </div>
+                  <span className="text-xs text-gray-400">{cert.date}</span>
                 </div>
                 <h3 className="mb-2 text-lg font-bold">{cert.name}</h3>
                 <p className="mb-4 text-sm text-gray-400">{cert.issuer}</p>
-                {cert.credentialUrl && cert.credentialUrl !== '#' && (
+                {cert.credentialUrl && (
                   <a
                     href={cert.credentialUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm text-primary-500 hover:underline"
+                    className="inline-flex items-center gap-2 text-sm text-primary-500 transition-colors hover:text-primary-400"
                   >
-                    View Credential
-                    <FiCheckCircle className="h-4 w-4" />
+                    View Certificate
+                    <FiExternalLink className="h-4 w-4" />
                   </a>
                 )}
               </motion.div>

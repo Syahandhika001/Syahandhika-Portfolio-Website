@@ -336,7 +336,7 @@ export function Contact() {
                   className="flex items-center gap-2 rounded-lg bg-green-500/10 border border-green-500/20 px-4 py-3 text-green-500"
                 >
                   <FiCheckCircle className="h-5 w-5" />
-                  Message sent successfully! I'll get back to you soon.
+                  Message sent successfully! I&apos;ll get back to you soon.
                 </motion.div>
               )}
 

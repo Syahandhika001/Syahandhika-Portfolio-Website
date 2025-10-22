@@ -105,7 +105,7 @@ export function Hero() {
               variants={itemVariants}
               className="font-heading text-5xl font-bold md:text-6xl lg:text-7xl"
             >
-              Hi, I'm <span className="gradient-text">{personalInfo.name}</span>
+              Hi, II&apos;mm <span className="gradient-text">{personalInfo.name}</span>
             </motion.h1>
 
             {/* Typewriter Roles */}
@@ -115,7 +115,7 @@ export function Hero() {
             >
               <Typewriter
                 options={{
-                  strings: personalInfo.roles,
+                  strings: [...personalInfo.roles],
                   autoStart: true,
                   loop: true,
                   deleteSpeed: 50,
