@@ -111,7 +111,7 @@ export function Experience() {
                 </div>
 
                 {/* Content */}
-                <div className={`w-full md:w-[calc(50%-2rem)] ${index % 2 === 0 ? 'md:text-right' : ''}`}>
+                <div className="w-full md:w-[calc(50%-2rem)]">
                   <div className="ml-16 md:ml-0 card group hover:border-primary-500">
                     {/* Header */}
                     <div className="mb-4">
@@ -147,7 +147,7 @@ export function Experience() {
                         {exp.responsibilities.map((resp, i) => (
                           <li key={i} className="flex items-start gap-2">
                             <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary-500" />
-                            {resp}
+                            <span className="flex-1">{resp}</span>
                           </li>
                         ))}
                       </ul>
@@ -180,7 +180,7 @@ export function Experience() {
                           {exp.achievements.map((achievement, i) => (
                             <li key={i} className="flex items-start gap-2">
                               <FiCheckCircle className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary-500" />
-                              {achievement}
+                              <span className="flex-1">{achievement}</span>
                             </li>
                           ))}
                         </ul>

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { contactInfo, socialLinks } from '@/lib/data';
 import {
   FiMail,
@@ -53,10 +54,24 @@ export function Contact() {
     e.preventDefault();
     setStatus('loading');
 
-    // Simulate API call
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
+    try {
+      // ✅ KIRIM EMAIL VIA EMAILJS
+      const result = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: contactInfo.email,
+        },
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+    );
+
+      console.log('✅ Email sent successfully:', result.text);
       setStatus('success');
+
       // Reset form
       setFormData({
         name: '',
@@ -64,9 +79,14 @@ export function Contact() {
         subject: '',
         message: '',
       });
+
       // Reset status after 3 seconds
       setTimeout(() => setStatus('idle'), 3000);
-    }, 1500);
+    } catch (error) {
+      console.error('❌ Failed to send email:', error);
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 3000);
+    }
   };
 
   const containerVariants = {

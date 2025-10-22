@@ -197,11 +197,32 @@ export const projectCategories = ['All', 'Web', 'System', 'Platform'] as const;
 export const experiences = [
   {
     id: 1,
+    title: 'CCTV Installer & Technician',
+    company: 'CV. DKComputindo',
+    location: 'Bekasi, Indonesia',
+    period: 'July 2021 - Present',
+    type: 'Freelance',
+    responsibilities: [
+      'Installed and configured CCTV surveillance systems for commercial properties',
+      'Conducted network configuration and IP camera setup',
+      'Performed system maintenance and troubleshooting',
+      'Provided technical support and training to clients',
+      'Documented installation procedures and system specifications',
+    ],
+    technologies: ['IP Cameras', 'NVR Systems', 'Network Configuration', 'Hikvision'],
+    achievements: [
+      'Completed 50+ successful installations',
+      'Maintained 99% client satisfaction rate',
+      'Reduced system downtime by implementing proactive maintenance',
+    ],
+  },
+  {
+    id: 2,
     title: 'OutSystems Developer',
     company: 'PT Mitra Integrasi Informatika',
     location: 'Jakarta, Indonesia',
-    period: 'January 2024 - Present',
-    type: 'Full-time',
+    period: 'February 2024 - March 2025',
+    type: 'Internship',
     responsibilities: [
       'Developed and maintained web applications using OutSystems low-code platform',
       'Collaborated with cross-functional teams to deliver high-quality software solutions',
@@ -211,49 +232,26 @@ export const experiences = [
     ],
     technologies: ['OutSystems', 'SQL Server', 'REST APIs', 'JavaScript', 'CSS'],
     achievements: [
-      'Successfully delivered 5+ projects on time',
-      'Improved application load time by 40%',
-    ],
-  },
-  {
-    id: 2,
-    title: 'CCTV Installer & Technician',
-    company: 'PT Paperocks Technology Indonesia',
-    location: 'Jakarta, Indonesia',
-    period: 'July 2022 - December 2023',
-    type: 'Full-time',
-    responsibilities: [
-      'Installed and configured CCTV surveillance systems for commercial properties',
-      'Conducted network configuration and IP camera setup',
-      'Performed system maintenance and troubleshooting',
-      'Provided technical support and training to clients',
-      'Documented installation procedures and system specifications',
-    ],
-    technologies: ['IP Cameras', 'NVR Systems', 'Network Configuration', 'Hikvision', 'Dahua'],
-    achievements: [
-      'Completed 50+ successful installations',
-      'Maintained 99% client satisfaction rate',
-      'Reduced system downtime by implementing proactive maintenance',
+      'Successfully delivered 3+ projects on time',
+      'Improved application looks and performance by 20%',
     ],
   },
   {
     id: 3,
-    title: 'Frontend Developer',
-    company: 'Freelance',
-    location: 'Remote',
-    period: '2021 - 2022',
-    type: 'Freelance',
+    title: 'Teaching Assistant – Programming Algorithms Course',
+    company: 'Universitas Pendidikan Indonesia',
+    location: 'Bandung, Indonesia',
+    period: 'September 2022 – February 2023',
+    type: 'Part-time', // Tipe pekerjaan diasumsikan sebagai 'Part-time'
     responsibilities: [
-      'Built responsive websites for small businesses and startups',
-      'Implemented modern UI/UX designs using React and Next.js',
-      'Collaborated with clients to gather requirements and deliver solutions',
-      'Maintained and updated existing web applications',
-      'Provided technical consultation and recommendations',
+      'Collaborated with lecturers to prepare and curate course materials for a class of 80 students, focusing on core algorithm and programming concepts.',
+      'Conducted weekly practical lab sessions for 35+ students, providing live coding demonstrations and hands-on assistance with programming assignments.',
+      'Evaluated and provided constructive feedback on over 100 student assignments and exams, guiding them to improve their algorithmic thinking.',
+      'Authored and refined supplementary learning materials.'
     ],
-    technologies: ['React', 'Next.js', 'JavaScript', 'HTML/CSS', 'Tailwind CSS'],
+    technologies: ["C, PowerPoint, Learning Management Systems (LMS), Hackerank"], 
     achievements: [
-      'Completed 10+ client projects',
-      'Achieved 5-star ratings on freelance platforms',
+      'Contributed to a 25% increase in student comprehension based on semester-end evaluations.'
     ],
   },
 ] as const;
@@ -262,10 +260,10 @@ export const education = [
   {
     id: 1,
     degree: 'Bachelor of Computer Science Education',
-    institution: 'Universitas Pendidikan Indoensia', // Ganti dengan universitas Anda
+    institution: 'Universitas Pendidikan Indoensia', 
     location: 'Indonesia',
     period: '2021 - 2025',
-    gpa: '3.7 / 4.0', // Optional, bisa dihapus jika tidak ingin ditampilkan
+    gpa: '3.7 / 4.0',
     achievements: [
       'Final Project: Web-based Multimedia Algorithm Learning Application',
     ],
@@ -275,25 +273,32 @@ export const education = [
 export const certifications = [
   {
     id: 1,
-    name: 'OutSystems Reactive Developer',
-    issuer: 'OutSystems',
-    date: '2024',
-    credentialUrl: '#', // Ganti dengan URL credential jika ada
+    name: 'PostgreSQL',
+    issuer: 'IDN.ID',
+    date: '2025',
+    credentialUrl: 'https://drive.google.com/file/d/1wP-fRTsr0BWdWUP50mZ0PCd5RABkCyIE/view?usp=sharing', 
   },
   {
     id: 2,
-    name: 'React - The Complete Guide',
-    issuer: 'Udemy',
-    date: '2023',
-    credentialUrl: '#',
+    name: 'Senior Programmer',
+    issuer: 'Badan Nasional Sertifikasi Profesi (BNSP)',
+    date: '2024',
+    credentialUrl: 'https://drive.google.com/file/d/14D6xOUWQpjeoipnGZSlZ84y-pv9C9bJ4/view?usp=sharing',
   },
-  // Tambahkan sertifikasi lain jika ada
+  {
+    id: 3,
+    name: 'IC3 Digital Literacy',
+    issuer: 'Certiport',
+    date: '2023',
+    credentialUrl: 'https://drive.google.com/file/d/1x6lQEQUmshD4EPkw1fXwre2f8vu2B4yh/view?usp=sharing',
+  },
+
 ] as const;
 
 
 export const contactInfo = {
   email: 'dhika.farizi@gmail.com',
-  phone: '+62 XXX XXXX XXXX', // Ganti dengan nomor Anda (optional)
-  location: 'Jakarta, Indonesia',
+  phone: '+62 81317570936', 
+  location: 'Bekasi, Indonesia',
   availability: 'Available for freelance projects',
 } as const;
