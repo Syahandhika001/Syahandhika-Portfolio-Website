@@ -36,6 +36,30 @@ export const personalInfo = {
   email: 'dhika.farizi@gmail.com',
   location: 'Indonesia',
   cvUrl: '/cv/syahandhika-cv.pdf', 
+  
+
+    socialLinks: [
+    {
+      platform: 'GitHub',
+      url: 'https://github.com/Syahandhika001',
+      icon: 'FiGithub',
+    },
+    {
+      platform: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/syahandhika-f/',
+      icon: 'FiLinkedin',
+    },
+    {
+      platform: 'Twitter',
+      url: 'https://twitter.com/syahandhika', // Update with your actual Twitter
+      icon: 'FiTwitter',
+    },
+    {
+      platform: 'Email',
+      url: 'mailto:dhika.farizi@gmail.com',
+      icon: 'FiMail',
+    },
+  ],
 } as const;
 
 export const socialLinks = [
@@ -84,15 +108,15 @@ export const aboutMe = {
   stats: [
     {
       label: 'Years Experience',
-      value: '2+',
+      value: '3+',
     },
     {
       label: 'Projects Completed',
-      value: '20+',
+      value: '7+',
     },
     {
       label: 'Technologies',
-      value: '15+',
+      value: '12+',
     },
     {
       label: 'Client Satisfaction',
@@ -108,87 +132,102 @@ export const projects = [
   id: 1,
   title: 'Nama Project Real Anda',
   description: 'Deskripsi project, fitur utama, problem yang dipecahkan',
-  image: '/images/projects/your-project.jpg', // Screenshot project
+  image: '/images/projects/your-project.jpg', 
   category: 'Web', // atau 'System', 'Platform'
   techStack: ['Tech', 'Yang', 'Dipakai'],
-  liveUrl: 'https://live-project-url.com', // Atau null jika private
+  liveUrl: 'https://live-project-url.com', // Atau null
   githubUrl: 'https://github.com/username/repo', // Atau null
   featured: true, // true untuk project penting
   }
   */
+  // ⭐ Featured Projects (Paling Menarik)
   {
     id: 1,
-    title: 'E-Commerce Platform',
+    title: 'PRIMM - Algorithm Learning Platform',
     description:
-      'Full-stack e-commerce platform with payment integration, admin dashboard, and real-time inventory management.',
-    image: '/images/projects/ecommerce.jpg',
-    category: 'Web',
-    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'MongoDB', 'Stripe'],
-    liveUrl: 'https://example.com',
-    githubUrl: 'https://github.com/Syahandhika001/ecommerce',
+      'Interactive web-based multimedia learning application for programming algorithms using PRIMM methodology. Features video tutorials, quizzes, and real-time code execution for students.',
+    image: '/images/projects/primm.svg',
+    category: 'Platform',
+    techStack: ['OutSystems', 'Reactive Web', 'SQL Server', 'REST APIs'],
+    liveUrl: 'https://personal-duj70ena.outsystemscloud.com/PRIMM/',
+    githubUrl: null,
     featured: true,
   },
   {
     id: 2,
-    title: 'Task Management App',
+    title: 'Kage Booking System',
     description:
-      'Collaborative task management application with real-time updates, team workspaces, and drag-and-drop functionality.',
-    image: '/images/projects/task-manager.jpg',
+      'Modern booking frontend application with responsive design, room search, booking management, and interactive UI. Built with React and Tailwind CSS for seamless user experience.',
+    image: '/images/projects/kage-booking.svg',
     category: 'Web',
-    techStack: ['React', 'Node.js', 'Socket.io', 'PostgreSQL'],
-    liveUrl: 'https://example.com',
-    githubUrl: 'https://github.com/Syahandhika001/task-manager',
+    techStack: ['React', 'Tailwind CSS', 'JavaScript', 'Responsive Design'],
+    liveUrl: null,
+    githubUrl: 'https://github.com/Syahandhika001/kage-booking-fe',
     featured: true,
   },
   {
     id: 3,
-    title: 'Portfolio Website Template',
+    title: 'Jajanan Anira - E-Commerce Platform',
     description:
-      'Modern and responsive portfolio template for developers and designers with dark mode support.',
-    image: '/images/projects/portfolio.jpg',
+      'Full-featured e-commerce website for traditional snacks with product catalog, shopping cart, order management, and admin dashboard. Built with PHP and MySQL for robust performance.',
+    image: '/images/projects/jajanan-anira.svg',
     category: 'Web',
-    techStack: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
-    liveUrl: 'https://example.com',
-    githubUrl: 'https://github.com/Syahandhika001/portfolio-template',
-    featured: false,
+    techStack: ['PHP', 'MySQL', 'Bootstrap', 'JavaScript'],
+    liveUrl: null,
+    githubUrl: 'https://github.com/Syahandhika001/JajananAnira',
+    featured: true,
   },
+
+  // 📚 Regular Projects
   {
     id: 4,
-    title: 'Weather Dashboard',
+    title: 'SekolahCekR ',
     description:
-      'Beautiful weather application with 7-day forecast, location search, and interactive maps.',
-    image: '/images/projects/weather.jpg',
-    category: 'Web',
-    techStack: ['React', 'OpenWeather API', 'Chart.js', 'CSS'],
-    liveUrl: 'https://example.com',
-    githubUrl: 'https://github.com/Syahandhika001/weather-app',
+      'School Competency Checker with machine learning integration.',
+    image: '/images/projects/sekolah-cekr.svg',
+    category: 'System',
+    techStack: ['R'],
+    liveUrl: null,
+    githubUrl: 'https://github.com/Syahandhika001/SekolahCekR',
     featured: false,
   },
   {
     id: 5,
-    title: 'CCTV Monitoring System',
+    title: 'Python E-Learning Platform',
     description:
-      'Professional CCTV system integration with remote monitoring, motion detection, and cloud storage.',
-    image: '/images/projects/cctv.jpg',
-    category: 'System',
-    techStack: ['Network Config', 'IP Cameras', 'NVR Setup'],
+      'Educational platform with course management, interactive quizzes, progress tracking, and student analytics. Built with Python Flask for backend efficiency.',
+    image: '/images/projects/python-elearning.svg',
+    category: 'Platform',
+    techStack: ['Python', 'Flask', 'SQLite', 'HTML/CSS', 'JavaScript'],
     liveUrl: null,
-    githubUrl: null,
-    featured: true,
+    githubUrl: 'https://github.com/Syahandhika001/Python-E.learning',
+    featured: false,
   },
   {
     id: 6,
-    title: 'OutSystems Business App',
+    title: 'ToDo List Manager',
     description:
-      'Enterprise business application built with OutSystems low-code platform for process automation.',
-    image: '/images/projects/outsystems.jpg',
+      'Clean and intuitive task management application with add, edit, delete, and mark complete features. Perfect for daily productivity tracking.',
+    image: '/images/projects/todolist.svg',
+    category: 'Web',
+    techStack: ['HTML', 'CSS', 'JavaScript', 'LocalStorage'],
+    liveUrl: null,
+    githubUrl: 'https://github.com/Syahandhika001/ToDoList',
+    featured: false,
+  },
+  {
+    id: 7,
+    title: 'Polaris - Telkomsel Enterprise System',
+    description:
+      'Enterprise-level business application built with OutSystems for Telkomsel internal processes. Features workflow automation, data management, and reporting (Private/VPN Access).',
+    image: '/images/projects/polaris.svg',
     category: 'Platform',
-    techStack: ['OutSystems', 'SQL Server', 'REST APIs'],
+    techStack: ['OutSystems', 'SQL Server', 'REST APIs', 'Enterprise Integration'],
     liveUrl: null,
     githubUrl: null,
     featured: false,
   },
-] as const;
+];
 
 {/*export const projectCategories = ['All', 'Web', 'Mobile', 'System', 'Platform', 'category baru'] as const; */}
 export const projectCategories = ['All', 'Web', 'System', 'Platform'] as const;
