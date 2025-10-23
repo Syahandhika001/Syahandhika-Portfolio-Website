@@ -105,7 +105,7 @@ export function Hero() {
               variants={itemVariants}
               className="font-heading text-5xl font-bold md:text-6xl lg:text-7xl"
             >
-              Hi, I&apos;mm <span className="gradient-text">{personalInfo.name}</span>
+              Hi, I&apos;m <span className="gradient-text">{personalInfo.name}</span>
             </motion.h1>
 
             {/* Typewriter Roles */}
